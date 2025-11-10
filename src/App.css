@@ -1,0 +1,174 @@
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ocupa toda la altura de la ventana */
+}
+
+.main-content {
+  flex: 1; /* empuja el footer hacia abajo */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Opcional: para dar espacio extra si el carrito crece mucho */
+.cart-container {
+  padding-bottom: 120px;
+}
+
+/* Estructura general */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contenedor principal de cada página */
+.main-content {
+  flex: 1; /* Ocupar todo el espacio disponible */
+}
+
+/* Footer */
+footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto; /* Lo empuja hacia el fondo */
+}
+
+/* 📱 Estilos responsive generales */
+@media (max-width: 768px) {
+  .container,
+.cart-container,
+.main-content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+  .app-container {
+    padding: 0;
+  }
+
+  /* Ajustar navbar si usas menús horizontales */
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* Ajustar productos si están en grid */
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* dos por fila en móvil */
+    gap: 0.75rem;
+  }
+
+  .product-card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Imágenes del producto */
+  .product-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Ajustar carrito */
+  .cart-container {
+    padding: 1rem;
+    flex-direction: column;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Ajustar footer */
+  footer {
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr; /* uno por fila en celulares muy pequeños */
+  }
+
+  .navbar-links {
+    font-size: 0.9rem;
+  }
+
+  .main-content {
+    padding: 0 0.5rem;
+  }
+}
+

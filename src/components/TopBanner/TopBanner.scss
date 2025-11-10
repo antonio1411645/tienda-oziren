@@ -1,0 +1,33 @@
+.top-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #42a8a1; /* Verde */
+  color: #ffffff;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px 0; /* <-- más alto */
+  font-weight: 500;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  .highlight {
+    background-color: #42a8a1;
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-right: 5px;
+    font-weight: 600;
+  }
+
+  .link {
+    color: #ffffffb3;
+    margin-left: 6px;
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}

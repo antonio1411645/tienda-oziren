@@ -1,0 +1,201 @@
+.product-card {
+  text-align: center;
+  cursor: pointer;
+    min-height: 80vh; /* ocupa buena parte de la pantalla */
+  padding-bottom: 150px;
+
+  .image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+
+    img {
+      width: 100%;
+      height: auto;
+      transition: opacity 0.4s ease;
+      display: block;
+    }
+
+    .hover-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+
+    &:hover .hover-img {
+      opacity: 1;
+    }
+
+    &:hover .main-img {
+      opacity: 0;
+    }
+  }
+
+  .product-info {
+    margin-top: 15px;
+
+    .name {
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    .price {
+      font-weight: 600;
+      color: #111;
+      margin: 5px 0;
+    }
+
+    .tag {
+      font-size: 0.9rem;
+      color: gray;
+    }
+  }
+}
+
+.product-card {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  text-align: center;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* imagen principal */
+.main-img {
+  opacity: 1;
+}
+
+/* imagen que aparece al hover */
+.hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+/* cambia al pasar el mouse */
+.image-container:hover .main-img {
+  opacity: 0;
+  transform: scale(1.02);
+}
+
+.image-container:hover .hover-img {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+/* --- info debajo --- */
+.product-info {
+  padding: 10px 0 20px;
+  line-height: 1.4;
+}
+
+.product-info .name {
+  font-weight: 600;
+  font-size: 16px;
+  color: #111;
+}
+
+.product-info .price {
+  font-size: 15px;
+  color: #333;
+  margin: 5px 0;
+}
+
+.product-info .tag {
+  font-size: 13px;
+  color: #777;
+}
+
+.buy-btn {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  margin-top: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  &:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+  }
+}
+
+.added-message {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #008000;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  animation: fadeInOut 2s ease forwards;
+  z-index: 10;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+  10%, 90% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -10px);
+  }
+}
+
+.product-image img,
+.image-container img {
+  object-fit: cover;
+  background-color: transparent; /* elimina fondo blanco */
+}
+
+.price-section {
+  display: flex;
+  flex-direction: column; /* 🔹 Pone oldPrice arriba del price */
+  align-items: center;    /* 🔹 Centra ambos en el cuadro */
+  gap: 2px;               /* 🔹 Espacio pequeño entre ambos precios */
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.current-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #000;
+}

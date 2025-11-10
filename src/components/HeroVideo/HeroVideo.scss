@@ -1,0 +1,50 @@
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.vid {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 1;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white !important;
+  text-align: center;
+  z-index: 2;
+
+  h1 {
+    font-size: 6.5rem !important;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 0.3rem;
+  }
+
+  p {
+    margin-top: 1rem; 
+    font-size: 1.6rem !important;
+    font-weight: 300;
+    margin-top: 0;
+    line-height: 1.2;
+  }
+}
+
+.txt p {
+  color: #fff !important;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.6); /* Mejora la visibilidad */
+
+}
