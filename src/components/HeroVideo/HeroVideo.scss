@@ -12,13 +12,14 @@
     position: absolute !important;
     top: 0 !important;
     left: 50% !important;
-    transform: translateX(-40%) !important; /* <-- cambia este valor para mover más/menos a la izquierda */
-    width: auto !important;                   /* mantenemos la proporción */
-    min-width: 140% !important;               /* cuánto "sobresale" por los lados */
+    transform: translateX(-50%) scaleX(1.3); /* <-- cambia este valor para mover más/menos a la izquierda */
+    width: 180% !important;                   /* mantenemos la proporción */
+    min-width: 160vw !important;               /* cuánto "sobresale" por los lados */
     height: 100% !important;                  /* ocupa toda la altura del contenedor */
     object-fit: cover !important;
     display: block !important;
     z-index: 1 !important;
+    overflow: visible;
   }
 
   /* contenido encima del video */
