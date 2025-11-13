@@ -1,15 +1,22 @@
 .category-hero {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   overflow: hidden;
+}
+
+/* 📱 En pantallas pequeñas, reducimos el alto */
+@media (max-width: 768px) {
+  .category-hero {
+    height: 50vh; /* Mitad de la pantalla en móviles */
+  }
 }
 
 .category-video {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: auto;
+  width: 100%;
   height: 100%;
   transform: translate(-50%, -50%);
   object-fit: cover;
@@ -39,29 +46,49 @@
   }
 }
 
+/* 🛍️ Grid de productos — adaptable */
 .product-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas fijas */
+  grid-template-columns: repeat(3, 1fr); /* 💻 3 columnas en laptop */
   gap: 2rem;
   padding: 3rem;
   background: #f8f8f8;
   justify-items: center;
 }
 
-/* Responsive para tablets */
+/* 📱 Tablet */
 @media (max-width: 1024px) {
   .product-list {
     grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    gap: 1.5rem;
+    padding: 2rem;
   }
 }
 
-/* Responsive para móviles */
+/* 📱 Celular */
 @media (max-width: 600px) {
   .product-list {
-    grid-template-columns: repeat(1, 1fr); /* 1 columna */
+    grid-template-columns: 1fr 1fr; /* 2 columnas en móvil */
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .product-card {
+    width: 100%;
+  }
+
+  .category-text h1 {
+    font-size: 2rem; /* Reduce el título en móvil */
+  }
+
+  .category-text p {
+    font-size: 1rem;
+  }
+
+  .category-hero {
+    height: 40vh; /* Ajusta el video en pantallas pequeñas */
   }
 }
-
 
 .no-products {
   text-align: center;

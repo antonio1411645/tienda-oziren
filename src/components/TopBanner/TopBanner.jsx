@@ -1,16 +1,18 @@
 // src/components/TopBanner/TopBanner.jsx
 import React from "react";
+import "./TopBanner.scss"
 
 const TopBanner = () => {
   return (
     <div
+      className="topbanner"
       style={{
         position: "fixed",
         top: 0,
         left: 0,
         width: "100%",
         height: "32px",
-        backgroundColor: "#42a8a1",
+        backgroundColor: "#125e30ff",
         color: "white",
         display: "flex",
         justifyContent: "center",

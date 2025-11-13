@@ -1,23 +1,22 @@
+import React from "react";
 import "./HeroVideo.scss";
 
-export default function HeroVideo() {
+export default function Hero() {
   return (
-    <div className="hero">
+    <section className="hero">
       <video
-        className="vid"
+        className="hero-video"
+        src="/videos/video.mp4"
         autoPlay
         muted
         loop
         playsInline
-      >
-        <source src="/videos/video.mp4" type="video/mp4" />
-        Tu navegador no soporta video HTML5.
-      </video>
+      ></video>
 
-      <div className="txt">
-        <h1>OZIREN</h1>
-        <p>TEMPORADA FINAL</p>
+      <div className="hero-content">
+        <h1 className="hero-title">OZIREN</h1>
+        <p className="hero-subtitle">TEMPORADA FINAL</p>
       </div>
-    </div>
+    </section>
   );
 }

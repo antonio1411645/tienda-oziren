@@ -172,3 +172,56 @@ footer {
   }
 }
 
+/* --- RESET Y CONFIGURACIÓN BÁSICA --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+/* --- CONTENEDOR GENERAL --- */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 📱 Celulares */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .cart-summary {
+    width: 100%;
+    position: static;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .product-grid {
+    gap: 1rem;
+  }
+
+  h1, h2 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
+
+/* 💻 Laptops grandes */
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

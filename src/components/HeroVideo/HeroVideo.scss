@@ -1,50 +1,134 @@
-.hero {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+@media (max-width: 768px) {
+  /* contenedor (lo dejamos igual o reaseguramos) */
+  section.hero {
+    position: relative !important;
+    height: 60vh !important;
+    margin-top: -80px !important;
+    overflow: hidden !important;
+  }
+
+  /* video: posicionado absolutamente para desplazarlo visualmente */
+  section.hero .hero-video {
+    position: absolute !important;
+    top: 0 !important;
+    left: 50% !important;
+    transform: translateX(-40%) !important; /* <-- cambia este valor para mover más/menos a la izquierda */
+    width: auto !important;                   /* mantenemos la proporción */
+    min-width: 140% !important;               /* cuánto "sobresale" por los lados */
+    height: 100% !important;                  /* ocupa toda la altura del contenedor */
+    object-fit: cover !important;
+    display: block !important;
+    z-index: 1 !important;
+  }
+
+  /* contenido encima del video */
+  section.hero .hero-content {
+    position: absolute !important;
+    bottom: 160px !important;      /* lo colocamos arriba del borde inferior */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 5 !important;
+    text-align: center !important;
+    width: 90% !important;
+    color: white !important;
+  }
+
+  section.hero .hero-content h1 {
+    font-size: 2rem !important;
+  }
+
+  section.hero .hero-content p {
+    font-size: 1rem !important;
+    color: white;
+  }
 }
 
-.vid {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: auto;
-  height: 100%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  z-index: 1;
-  min-width: 100%;
-  min-height: 100%;
-}
 
-.txt {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+/* 🖥️ LAPTOP (todo vuelve exactamente como estaba) */
+@media (min-width: 769px) {
+  .hero {
+    height: 100vh;
+    width: 100%;
+    margin-bottom: 60px; 
+  }
+
+  .hero-video {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: -80px;
+    height: calc(100vh + 40px);
+    transform: scale(1.05);
+    object-fit: cover;   /* 🔥 LLENA TODA LA PANTALLA */
+    object-position: center;
+  }
+
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .hero-content h1 {
   color: white !important;
-  text-align: center;
-  z-index: 2;
+}
 
-  h1 {
-    font-size: 6.5rem !important;
-    font-weight: 600;
-    letter-spacing: 2px;
-    margin-bottom: 0.3rem;
+.hero-content p {
+  color: whitesmoke !important;
+}
+}
+
+
+
+/* Animación */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-
-  p {
-    margin-top: 1rem; 
-    font-size: 1.6rem !important;
-    font-weight: 300;
-    margin-top: 0;
-    line-height: 1.2;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.txt p {
-  color: #fff !important;
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.6); /* Mejora la visibilidad */
+/* ===========================
+   📱 RESPONSIVE
+=========================== */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 4rem;
+  }
 
+  .hero-subtitle {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 90vh; /* un poco más corto en móvil */
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
 }

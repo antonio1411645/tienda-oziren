@@ -1,119 +1,171 @@
-/* ======== ESTADO INICIAL (arriba, transparente) ======== */
+/* ===========================
+   🌟 ESTADO INICIAL — NAVBAR TRANSPARENTE
+=========================== */
 .n {
+  position: absolute;
+  top: 25px;
   width: 100%;
-  background-color: transparent; /* transparente al inicio */
-  position: fixed;
-  top: 32px; /* debajo del TopBanner */
-  left: 0;
-  z-index: 999;
+  z-index: 10;
+
+  background: transparent;
+  color: white;
+
   transition: all 0.3s ease;
-  box-shadow: none;
 }
 
-/* contenedor interno del navbar */
+/* 🔥 Fuerza texto blanco en modo transparente */
+.n .brand-link,
+.n .lk li a,
+.n .cart-link {
+  color: white !important;
+}
+
+
+/* ===========================
+   🌟 ESTADO SCROLL — NAVBAR BLANCO
+=========================== */
+.n-w {
+  position: fixed;
+  background: white !important;
+  color: black !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* 🔥 Fuerza texto negro cuando hay scroll */
+.n-w .brand-link,
+.n-w .lk li a,
+.n-w .cart-link {
+  color: black !important;
+}
+
+
+/* ===========================
+   NAV CONTAINER
+=========================== */
 .nav-container {
-  width: 95%;
-  max-width: 1200px;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 40px;
-  padding-right: 20px;
+  padding: 0.8rem 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
-/* logo */
+
+/* ===========================
+   LOGO (OZIREN)
+=========================== */
 .lg .brand-link {
   font-size: 1.8rem;
   font-weight: 700;
-  color: white; /* blanco al inicio */
   text-decoration: none;
-  margin-left: -90px;
+  letter-spacing: 2px;
+  font-family: "Playfair Display", serif;
   transition: color 0.3s ease;
 }
 
-/* lista de enlaces */
+.lg .brand-link:hover {
+  color: #007c5c;
+}
+
+
+/* ===========================
+   LINKS
+=========================== */
 .lk {
-  list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
+  gap: 1.5rem;
+  align-items: center;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.lk a {
+.lk li a {
   text-decoration: none;
-  color: white; /* blanco al inicio */
+  font-size: 1rem;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
-.lk a:hover {
-  color: #00cc00; /* verde más claro al pasar el mouse */
+.lk li a:hover {
+  color: #007c5c !important;
 }
 
-/* ======== ESTADO CON SCROLL (fondo blanco, texto negro) ======== */
-.n-w {
-  background-color: white;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.n-w .brand-link {
-  color: #008000; /* verde del logo */
-}
-
-.n-w .lk a {
-  color: black;
-}
-
-.n-w .lk a:hover {
-  color: #008000;
-}
-
-.cart-link {
-  color: black;
-  transition: color 0.3s ease;
-}
-
-.cart-link:hover {
-  color: #008000;
-}
-
-/* Si quieres un contador pequeño (opcional) */
-.cart-count {
-  background-color: #008000;
-  color: white;
-  border-radius: 50%;
-  font-size: 12px;
-  padding: 2px 6px;
+.lk li a::after {
+  content: "";
   position: absolute;
-  top: -8px;
-  right: -10px;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #007c5c;
+  transition: width 0.3s ease;
 }
 
-/* 🔹 Estilos del carrito */
+.lk li a:hover::after {
+  width: 100%;
+}
+
+
+/* ===========================
+   CARRITO
+=========================== */
 .cart-item {
   position: relative;
 }
 
-.cart-link {
-  color: black;
-  transition: color 0.3s ease;
-}
-
-.cart-link:hover {
-  color: #008000;
-}
-
 .cart-count {
-  background-color: #008000;
-  color: white;
-  border-radius: 50%;
-  font-size: 12px;
-  padding: 2px 6px;
   position: absolute;
   top: -8px;
   right: -10px;
+  background-color: #007c5c;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: 600;
 }
 
+
+/* ===========================
+   📱 MODO CELULAR
+=========================== */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.8rem 1rem;
+  }
+
+  .lg {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .lk {
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+    border-top: 1px solid #eee;
+    scrollbar-width: none;
+  }
+
+  .lk::-webkit-scrollbar {
+    display: none;
+  }
+
+  .lk li a {
+    font-size: 0.95rem;
+    padding: 4px 6px;
+  }
+
+  .cart-item {
+    flex-shrink: 0;
+  }
+}
