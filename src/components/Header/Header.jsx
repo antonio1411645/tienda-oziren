@@ -11,7 +11,6 @@ export default function Header() {
   const navigate = useNavigate();
   const totalQty = cart.reduce((s, i) => s + i.quantity, 0);
 
-  // Detectar scroll para cambiar el fondo
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);

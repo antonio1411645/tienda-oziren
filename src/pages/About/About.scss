@@ -12,7 +12,6 @@
   overflow: hidden;
 }
 
-/* Fondo oscuro con transparencia encima de la imagen */
 .about-overlay {
   position: absolute;
   top: 0;
@@ -23,7 +22,6 @@
   z-index: 1;
 }
 
-/* Contenedor principal del contenido */
 .about-content {
   position: relative;
   z-index: 2;
@@ -36,21 +34,18 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Título */
 .about-content h1 {
   font-size: 2.5rem;
   margin-bottom: 1.2rem;
   font-weight: bold;
 }
 
-/* Párrafos */
 .about-content p {
   line-height: 1.6;
   font-size: 1.1rem;
   margin-bottom: 1rem;
 }
 
-/* Logo en texto (blanco y alineado a la izquierda arriba) */
 .logo-text {
   position: absolute;
   top: 2rem;

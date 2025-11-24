@@ -1,12 +1,12 @@
 .cart-page {
   width: 100vw;
-  min-height: 100vh; /* ✅ permite que crezca si hay muchos productos */
+  min-height: 100vh; 
   background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 1rem; /* mantiene espacio para el logo */
-  flex-direction: column; /* ✅ mantiene estructura en columna */
+  padding-top: 1rem; 
+  flex-direction: column; 
 }
 
 
@@ -94,7 +94,7 @@
 
 .cart-summary {
    position: sticky;
-  top: 120px; /* 👈 baja un poco el resumen */
+  top: 120px; 
   align-self: flex-start;
   background: #f9f9f9;
   padding: 1.5rem;
@@ -189,7 +189,7 @@
 footer {
   position: relative;
   width: 100%;
-  margin-top: auto; /* 👈 asegura que quede al fondo */
+  margin-top: auto; 
 }
 
 .item-color,

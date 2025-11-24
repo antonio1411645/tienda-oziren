@@ -13,14 +13,12 @@ const categories = [
 ];
 
 export default function Categories() {
-  // 🌀 Efecto de movimiento de texto al hacer scroll
   useEffect(() => {
     const handleScroll = () => {
       const texts = document.querySelectorAll(".cat-text");
       texts.forEach((text) => {
         const rect = text.getBoundingClientRect();
         const offset = rect.top - window.innerHeight / 2;
-        // ajusta la velocidad del movimiento (0.2 es sutil)
         const moveY = offset * 0.2;
         text.style.transform = `translateY(${moveY}px)`;
       });

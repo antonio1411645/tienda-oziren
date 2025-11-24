@@ -5,10 +5,9 @@
   overflow: hidden;
 }
 
-/* 📱 En pantallas pequeñas, reducimos el alto */
 @media (max-width: 768px) {
   .category-hero {
-    height: 50vh; /* Mitad de la pantalla en móviles */
+    height: 50vh; 
   }
 }
 
@@ -46,29 +45,26 @@
   }
 }
 
-/* 🛍️ Grid de productos — adaptable */
 .product-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 💻 3 columnas en laptop */
+  grid-template-columns: repeat(3, 1fr); 
   gap: 2rem;
   padding: 3rem;
   background: #f8f8f8;
   justify-items: center;
 }
 
-/* 📱 Tablet */
 @media (max-width: 1024px) {
   .product-list {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 1.5rem;
     padding: 2rem;
   }
 }
 
-/* 📱 Celular */
 @media (max-width: 600px) {
   .product-list {
-    grid-template-columns: 1fr 1fr; /* 2 columnas en móvil */
+    grid-template-columns: 1fr 1fr; 
     gap: 1rem;
     padding: 1rem;
   }
@@ -78,7 +74,7 @@
   }
 
   .category-text h1 {
-    font-size: 2rem; /* Reduce el título en móvil */
+    font-size: 2rem; 
   }
 
   .category-text p {
@@ -86,7 +82,7 @@
   }
 
   .category-hero {
-    height: 40vh; /* Ajusta el video en pantallas pequeñas */
+    height: 40vh; 
   }
 }
 

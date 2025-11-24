@@ -1,7 +1,7 @@
 .product-card {
   text-align: center;
   cursor: pointer;
-  min-height: 80vh; /* ocupa buena parte de la pantalla */
+  min-height: 80vh; 
   padding-bottom: 150px;
 
   .image-container {
@@ -78,12 +78,10 @@
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* imagen principal */
 .main-img {
   opacity: 1;
 }
 
-/* imagen que aparece al hover */
 .hover-img {
   position: absolute;
   top: 0;
@@ -91,7 +89,6 @@
   opacity: 0;
 }
 
-/* cambia al pasar el mouse */
 .image-container:hover .main-img {
   opacity: 0;
   transform: scale(1.02);
@@ -102,7 +99,6 @@
   transform: scale(1.02);
 }
 
-/* --- info debajo --- */
 .product-info {
   padding: 10px 0 20px;
   line-height: 1.4;
@@ -178,14 +174,14 @@
 .product-image img,
 .image-container img {
   object-fit: cover;
-  background-color: transparent; /* elimina fondo blanco */
+  background-color: transparent; 
 }
 
 .price-section {
   display: flex;
-  flex-direction: column; /* 🔹 Pone oldPrice arriba del price */
-  align-items: center;    /* 🔹 Centra ambos en el cuadro */
-  gap: 2px;               /* 🔹 Espacio pequeño entre ambos precios */
+  flex-direction: column; 
+  align-items: center;    
+  gap: 2px;              
 }
 
 .old-price {
@@ -200,12 +196,9 @@
   color: #000;
 }
 
-/* ✅ RESPONSIVE AJUSTES */
-
-/* 📱 Para celulares */
 @media (max-width: 600px) {
   .product-card {
-    min-height: auto; /* Evita que las tarjetas sean demasiado altas */
+    min-height: auto; 
     padding-bottom: 50px;
     max-width: 100%;
   }
@@ -224,7 +217,6 @@
   }
 }
 
-/* 💻 Tablets */
 @media (max-width: 1024px) {
   .product-card {
     min-height: 60vh;

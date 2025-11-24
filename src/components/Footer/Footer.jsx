@@ -12,7 +12,6 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        {/* Redes sociales */}
         <div className="socials">
   <a href="https://www.instagram.com/ozirengroup?igsh=am5zZzFyenI2NXli" target="_blank" rel="noopener noreferrer">
     <img src="/imagenes/instagram.png" alt="Instagram" />
@@ -23,19 +22,16 @@ export default function Footer() {
   <a href="https://wa.me/51961482429" target="_blank" rel="noopener noreferrer">
     <img src="/imagenes/whatsapp.png" alt="WhatsApp" />
   </a>
-  {/* Nueva red social: Facebook */}
   <a href="https://www.facebook.com/share/19wpgRfehY/" target="_blank" rel="noopener noreferrer">
     <img src="/imagenes/facebook.png" alt="Facebook" className="facebook"/>
   </a>
 </div>
 
 
-        {/* Medios de pago */}
         <div className="payments">
           <img src="/imagenes/medios_pago.png" alt="Medios de pago" />
         </div>
 
-        {/* Seguridad */}
         <div className="secure">
           <p>Tienda 100% Segura</p>
         </div>

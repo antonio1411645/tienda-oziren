@@ -1,4 +1,3 @@
-// src/components/TopBanner/TopBanner.jsx
 import React from "react";
 import "./TopBanner.scss"
 

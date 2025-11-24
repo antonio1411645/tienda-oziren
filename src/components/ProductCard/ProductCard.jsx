@@ -6,12 +6,10 @@ export default function ProductCard({ product }) {
   const { addToCart } = useCart();
   const [added, setAdded] = useState(false);
 
-  // 🆕 Estados para color y talla
   const [selectedColor, setSelectedColor] = useState(product.colors?.[0] || "");
   const [selectedSize, setSelectedSize] = useState(product.sizes?.[0] || "");
 
   function handleBuy() {
-    // Verifica que se haya seleccionado color y talla
     if (product.colors?.length && !selectedColor) {
       alert("Por favor selecciona un color.");
       return;
@@ -21,10 +19,8 @@ export default function ProductCard({ product }) {
       return;
     }
 
-    // Añade al carrito con color y talla seleccionados
     addToCart({ ...product, selectedColor, selectedSize });
 
-    // Muestra mensaje temporal
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
   }
@@ -48,7 +44,6 @@ export default function ProductCard({ product }) {
 
         <p className="tag">{product.tag}</p>
 
-        {/* 🎨 Selector de color */}
         {product.colors && product.colors.length > 0 && (
           <div className="select-group">
             <label>Color:</label>
@@ -65,7 +60,6 @@ export default function ProductCard({ product }) {
           </div>
         )}
 
-        {/* 📏 Selector de talla */}
         {product.sizes && product.sizes.length > 0 && (
           <div className="select-group">
             <label>Talla:</label>

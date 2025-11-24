@@ -22,10 +22,8 @@ const Checkout = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Puedes guardar los datos temporalmente (por ejemplo, localStorage)
     localStorage.setItem("checkoutData", JSON.stringify(formData));
 
-    // Luego redirige al paso de método de pago
     navigate("/payment-method");
   };
 

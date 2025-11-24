@@ -18,7 +18,6 @@ export default function CartPage() {
 
       <div className="cart-page">
         <div className="cart-container">
-          {/* 🛒 Lista de productos */}
           <div className="cart-items">
             <h1>Tu carrito</h1>
             {cart.length === 0 ? (
@@ -35,8 +34,6 @@ export default function CartPage() {
                     <img src={item.image2 || item.image1} alt={item.name} />
                     <div className="item-details">
                       <h3>{item.name}</h3>
-
-                      {/* 🔹 Mostrar color y talla si existen */}
                       {item.selectedColor && (
                         <p className="item-color">
                           <strong>Color:</strong> {item.selectedColor}
@@ -69,7 +66,6 @@ export default function CartPage() {
             )}
           </div>
 
-          {/* 💳 Resumen de compra */}
           {cart.length > 0 && (
             <div className="cart-summary">
               <h2>Resumen de compra</h2>

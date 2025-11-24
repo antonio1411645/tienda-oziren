@@ -14,19 +14,16 @@ import ConfirmationPage from "./pages/ConfirmationPage/ConfirmationPage.jsx";
 import TopBanner from "./components/TopBanner/TopBanner.jsx";
 import "./App.css"; // 👈 agrega estilos globales aquí
 
-// 📌 Componente Layout
 function Layout() {
   const location = useLocation();
 
   const hideNavbarPaths = ["/cart", "/checkout", "/payment-method", "/confirmation"];
 
 
-  // Mostrar Navbar solo en Home
   const showNavbar =
     !hideNavbarPaths.includes(location.pathname) &&
     (location.pathname === "/" || location.pathname.startsWith("/category"));
 
-  // Ocultar Footer en estas rutas
   const hideFooterPaths = ["/checkout", "/payment-method", "/confirmacion"];
   const showFooter = !hideFooterPaths.includes(location.pathname);
 
@@ -54,7 +51,6 @@ function Layout() {
   );
 }
 
-// 📌 Componente principal
 export default function App() {
   return (
     <Router>

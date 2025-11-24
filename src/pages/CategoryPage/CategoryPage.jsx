@@ -4,9 +4,8 @@ import products from "../../data/products";
 import "./CategoryPage.scss";
 
 export default function CategoryPage() {
-  const { name } = useParams(); // nombre de la categoría en la URL
+  const { name } = useParams(); 
 
-  // 🔹 Asocia videos a cada categoría
   const categoryVideos = {
     juguetes: "/videos/juguetes.mp4",
     boy: "/videos/boy.mp4",
@@ -17,7 +16,6 @@ export default function CategoryPage() {
     novedades: "/videos/novedades.mp4",
   };
 
-  // 🔹 Filtra productos según categoría
   const filteredProducts = products.filter(
     (p) => p.category.toLowerCase() === name.toLowerCase()
   );
@@ -32,7 +30,6 @@ export default function CategoryPage() {
 
   return (
      <>
-    {/* 🎥 Video principal */}
     <div key={name} className="category-hero">
       <video autoPlay muted loop playsInline className="category-video">
         <source src={categoryVideos[name]} type="video/mp4" />
@@ -45,7 +42,6 @@ export default function CategoryPage() {
       </div>
     </div>
 
-      {/* 🛍️ Productos */}
       <div className="product-list">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((prod) => <ProductCard key={prod.id} product={prod} />)

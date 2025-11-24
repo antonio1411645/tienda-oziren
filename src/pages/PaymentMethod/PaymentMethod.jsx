@@ -13,7 +13,6 @@ export default function PaymentMethod() {
       return;
     }
 
-    // Recuperar los datos del cliente guardados en Checkout
     const checkoutData = JSON.parse(localStorage.getItem("checkoutData")) || {};
 
     if (!checkoutData || !checkoutData.correo) {
@@ -25,8 +24,8 @@ export default function PaymentMethod() {
 
     try {
       await emailjs.send(
-        "service_chs97o5", // tu Service ID
-        "template_2mto0xa", // tu Template ID
+        "service_chs97o5", 
+        "template_2mto0xa", 
         {
           to_name: checkoutData.nombre,
           to_email: checkoutData.correo,
@@ -39,7 +38,7 @@ export default function PaymentMethod() {
       );
 
       console.log("📩 Correo enviado con éxito!");
-      navigate("/confirmation"); // redirigir solo al finalizar el envío
+      navigate("/confirmation"); 
     } catch (error) {
       console.error("❌ Error al enviar el correo:", error);
       alert("Hubo un error al enviar el correo de confirmación.");
